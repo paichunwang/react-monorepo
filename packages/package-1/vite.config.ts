@@ -1,17 +1,2 @@
-import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
-import { resolve } from 'path';
-
-export default defineConfig({
-  plugins: [dts({ rollupTypes: true })],
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'es' : 'cjs'}.js`
-    },
-    rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime']
-    }
-  }
-});
+import { createPackageConfig } from "../../vite.config.base";
+export default createPackageConfig(__dirname);
