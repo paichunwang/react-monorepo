@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/turbo/schema.json",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -8,6 +7,7 @@
     "dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+    "lint": {}
   }
 }

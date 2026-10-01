@@ -1,43 +1,38 @@
-// vite.config.base.ts
-import { defineConfig, type UserConfig } from "vite";
+import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
-import { readFileSync } from "fs";
 
-export function createPackageConfig(
+export function createViteLibraryConfig(
   packageDir: string,
-  extraConfig: UserConfig = {}
-): UserConfig {
-  const pkg = JSON.parse(
-    readFileSync(resolve(packageDir, "package.json"), "utf-8")
-  );
+  pkgManifest: Record<string, any>
+) {
+  const externalDeps = [
+    ...Object.keys(pkgManifest.peerDependencies || {}),
+    ...Object.keys(pkgManifest.dependencies || {}),
+  ];
 
   return defineConfig({
+    resolve: {
+      alias: {
+        "@src": resolve(packageDir, "src"),
+      },
+    },
     plugins: [
       dts({
-        bundleTypes: true,
-        entryRoot: resolve(packageDir, "src"),
+        entryRoot: "src",
+        tsconfigPath: resolve(packageDir, "tsconfig.json"),
       }),
-      ...(extraConfig.plugins || []),
     ],
     build: {
       lib: {
         entry: resolve(packageDir, "src/index.ts"),
-        formats: ["es", "cjs"],
-        fileName: (format) => `index.${format === "es" ? "es" : "cjs"}.js`,
+        formats: ["es"],
+        fileName: "index",
       },
       rollupOptions: {
-        external: [
-          "react",
-          "react-dom",
-          "react/jsx-runtime",
-          ...Object.keys(pkg.dependencies || {}),
-          ...Object.keys(pkg.peerDependencies || {}),
-        ],
-        ...extraConfig.build?.rollupOptions,
+        external: (id) =>
+          externalDeps.some((dep) => id === dep || id.startsWith(`${dep}/`)),
       },
-      ...extraConfig.build,
     },
-    ...extraConfig,
   });
 }

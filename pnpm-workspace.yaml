@@ -1,0 +1,17 @@
+packages:
+  - "packages/*"
+
+catalog:
+  # Core Engine & Framework Standards
+  cesium: ^1.118.0
+  react: ^18.3.1
+  react-dom: ^18.3.1
+  lodash-es: ^4.17.21
+
+  # Build & TypeScript Tooling
+  typescript: ^5.5.4
+  vite: ^5.4.0
+  vite-plugin-dts: ^4.0.0
+  "@types/node": ^20.14.0
+  "@types/react": ^18.3.3
+  "@types/lodash-es": ^4.17.12
