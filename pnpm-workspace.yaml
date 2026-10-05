@@ -1,5 +1,6 @@
 packages:
   - "packages/*"
+  - "apps/*"
 
 catalog:
   # Core Engine & Framework Standards
@@ -9,9 +10,14 @@ catalog:
   lodash-es: ^4.17.21
 
   # Build & TypeScript Tooling
-  typescript: ^5.5.4
-  vite: ^5.4.0
-  vite-plugin-dts: ^4.0.0
-  "@types/node": ^20.14.0
+  "@types/react-dom": ^18.3.0
   "@types/react": ^18.3.3
+  "@vitejs/plugin-react": ^4.3.1
   "@types/lodash-es": ^4.17.12
+  "@types/node": ^20.14.0
+  typescript: ^5.5.4
+  vite-plugin-dts: ^4.0.0
+  vite: ^5.4.0
+
+  # Linting Tooling
+  sherif: ^0.8.0

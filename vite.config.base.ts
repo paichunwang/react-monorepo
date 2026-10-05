@@ -12,11 +12,11 @@ export function createViteLibraryConfig(
   ];
 
   return defineConfig({
-    resolve: {
-      alias: {
-        "@src": resolve(packageDir, "src"),
-      },
-    },
+    // resolve: {
+    //   alias: {
+    //     "@src": resolve(packageDir, "src"),
+    //   },
+    // },
     plugins: [
       dts({
         entryRoot: "src",

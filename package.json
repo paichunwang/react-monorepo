@@ -12,6 +12,10 @@
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3",
-    "turbo": "^2.11.6"
+    "turbo": "^2.11.6",
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
   }
 }

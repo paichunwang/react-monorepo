@@ -13,8 +13,7 @@
     "vite.config.ts"
   ],
   "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch"
+    "build": "vite build"
   },
   "dependencies": {
     "lodash-es": "catalog:"
