@@ -10,6 +10,10 @@
     },
     "lint": {
       "inputs": ["src/**/*", "eslint.config.js", "tsconfig.json", "package.json"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
     }
   }
 }
