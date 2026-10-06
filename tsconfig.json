@@ -12,5 +12,5 @@
     "jsx": "react-jsx"
   },
   "include": ["eslint.config.js", "vite.config.base.ts"],
-  "exclude": ["node_modules", "apps", "packages", "dist"]
+  "exclude": ["node_modules", "dist"]
 }

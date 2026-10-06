@@ -20,10 +20,9 @@ catalog:
   '@changesets/cli': ^3.0.3
 
   # Linting & Formatting
-  eslint: ^9.10.0
-  '@eslint/js': ^9.10.0
+  eslint: latest
+  '@eslint/js': latest
+  '@eslint-react/eslint-plugin': latest
   typescript-eslint: ^8.5.0
   prettier: ^3.3.3
   eslint-config-prettier: ^9.1.0
-  eslint-plugin-react: ^7.35.0
-  eslint-plugin-react-hooks: ^4.6.2

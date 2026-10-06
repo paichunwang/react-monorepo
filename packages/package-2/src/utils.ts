@@ -1,4 +1,4 @@
-import { capitalize } from "lodash-es";
+import { capitalize } from 'lodash-es';
 
 export function formatLabel(text: string): string {
   return capitalize(text);

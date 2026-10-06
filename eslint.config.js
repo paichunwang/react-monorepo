@@ -1,8 +1,7 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import eslintReact from '@eslint-react/eslint-plugin';
 
 export default tseslint.config(
   {
@@ -13,26 +12,13 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ['*.js', '*.ts', '*.config.js', '*.config.ts', 'eslint.config.js'],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
-  {
-    files: ['**/*.{jsx,tsx}'],
-    plugins: {
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-    rules: {
-      ...reactHooksPlugin.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off',
-    },
-  },
+  eslintReact.configs.recommended,
   eslintConfigPrettier
 );
