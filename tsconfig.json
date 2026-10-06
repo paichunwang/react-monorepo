@@ -9,9 +9,8 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@src/*": ["./src/*"]
-    }
-  }
+    "jsx": "react-jsx"
+  },
+  "include": ["eslint.config.js", "vite.config.base.ts"],
+  "exclude": ["node_modules", "apps", "packages", "dist"]
 }

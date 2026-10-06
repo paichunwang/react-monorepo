@@ -12,17 +12,18 @@
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@changesets/cli": "^3.0.3",
-    "turbo": "^2.11.6",
-    "@types/node": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "vite-plugin-dts": "catalog:",
+    "@changesets/cli": "catalog:",
     "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",
     "eslint-plugin-react": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
-    "typescript-eslint": "catalog:"
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
   }
 }
