@@ -1,0 +1,28 @@
+{
+  /* 1. Tell VS Code to use local node_modules packages, NOT global tools */
+  "prettier.resolveGlobalModules": false,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  /* 2. Set Prettier as the default formatter for all code files */
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  /* 3. Run ESLint auto-fixes on save (imports, code style) */
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  /* 4. Language-specific overrides to guarantee Prettier handles formatting */
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

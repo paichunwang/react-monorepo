@@ -13,13 +13,11 @@
     "vite.config.ts"
   ],
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "lint": "eslint ."
   },
-  "dependencies": {
-    "lodash-es": "catalog:"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/lodash-es": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:"
