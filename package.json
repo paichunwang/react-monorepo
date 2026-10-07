@@ -13,9 +13,8 @@
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@changesets/cli": "catalog:",
-    "@eslint/js": "catalog:",
     "@eslint-react/eslint-plugin": "catalog:",
+    "@eslint/js": "catalog:",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",

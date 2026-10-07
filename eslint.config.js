@@ -9,16 +9,23 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
+  eslintReact.configs.recommended,
   {
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
-        projectService: {
-          allowDefaultProject: ['*.js', '*.ts', '*.config.js', '*.config.ts', 'eslint.config.js'],
-        },
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
-  eslintReact.configs.recommended,
+  {
+    files: ['eslint.config.js'],
+    languageOptions: {
+      parserOptions: {
+        projectService: false,
+      },
+    },
+  },
   eslintConfigPrettier
 );
