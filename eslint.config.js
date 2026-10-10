@@ -2,8 +2,9 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintReact from '@eslint-react/eslint-plugin';
+import { defineConfig } from 'eslint/config';
 
-export default tseslint.config(
+export default defineConfig([
   {
     ignores: ['**/dist/**', '**/node_modules/**', '**/.turbo/**', '**/coverage/**'],
   },
@@ -20,12 +21,12 @@ export default tseslint.config(
     },
   },
   {
-    files: ['eslint.config.js'],
+    files: ['**/*.config.js', '**/*.config.ts', '**/*.config.mjs', '**/*.config.cjs'],
     languageOptions: {
       parserOptions: {
         projectService: false,
       },
     },
   },
-  eslintConfigPrettier
-);
+  eslintConfigPrettier,
+]);
