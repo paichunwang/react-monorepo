@@ -7,6 +7,17 @@ interface PackageManifest {
   peerDependencies?: Record<string, string>;
 }
 
+/**
+ * Generates a Vite configuration for monorepo library packages.
+ *
+ * Automatically sets up library build mode, TypeScript declaration generation (.d.ts),
+ * and configures Rollup to externalize all dependencies and peer dependencies defined
+ * in the provided package manifest.
+ *
+ * @param packageDir - The absolute path to the library's root directory (e.g., `import.meta.dirname`).
+ * @param pkgManifest - The parsed contents of the library's `package.json`.
+ * @returns A Vite configuration object tailored for package distribution.
+ */
 export function createViteLibraryConfig(packageDir: string, pkgManifest: PackageManifest) {
   const externalDeps = [
     ...Object.keys(pkgManifest.peerDependencies || {}),

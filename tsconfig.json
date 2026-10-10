@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "jsx": "react-jsx"
   },
-  "include": ["eslint.config.js", "vite.config.base.ts", "tools/vite-plugin-monorepo.ts"],
+  "include": ["eslint.config.js", "tools/vite-config-base.ts", "tools/vite-plugin-monorepo.ts"],
   "exclude": ["node_modules", "dist"]
 }
