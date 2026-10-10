@@ -17,7 +17,6 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {},
   "devDependencies": {
     "typescript": "catalog:",
     "vite": "catalog:",

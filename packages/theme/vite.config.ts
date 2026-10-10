@@ -1,24 +1,6 @@
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
-import { resolve } from 'path';
+import { monorepoLibraryPlugin } from '../../tools/vite-plugin-monorepo';
 
 export default defineConfig({
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es'],
-      fileName: 'index',
-    },
-    rollupOptions: {
-      external: [
-        'react',
-        'react/jsx-runtime',
-        '@mui/material',
-        '@mui/material/styles',
-        '@emotion/react',
-        '@emotion/styled',
-      ],
-    },
-  },
-  plugins: [dts({ rollupTypes: true })],
+  plugins: [monorepoLibraryPlugin()],
 });
