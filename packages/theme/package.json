@@ -1,5 +1,5 @@
 {
-  "name": "@my-org/mui-theme",
+  "name": "@smoothglue/mui-theme",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",

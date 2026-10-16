@@ -5,17 +5,19 @@
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "build": "turbo run build",
+    "changeset": "changeset",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
     "format": "prettier --write .",
+    "lint": "turbo run lint",
     "pack:all": "pnpm --recursive pack",
-    "changeset": "changeset"
+    "spellcheck": "cspell \"**/*.{ts,tsx,js,json,md}\"",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "catalog:",
     "@eslint/js": "catalog:",
     "@types/node": "catalog:",
+    "cspell": "catalog:",
     "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",
     "prettier": "catalog:",
